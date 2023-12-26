@@ -2,9 +2,18 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
-
 import sys
 import time
+
+import os
+# get the absolute path of the file
+abs_path = os.path.abspath(__file__)
+# extract the directory path
+script_path = os.path.dirname(abs_path)
+os.chdir(script_path)
+parent_directory = os.path.abspath('..')
+sys.path.append(parent_directory)
+
 
 import torchvision.utils as vutils
 from lib.loss.acw_loss import *
